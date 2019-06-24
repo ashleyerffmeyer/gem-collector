@@ -5,6 +5,7 @@ A jQuery powered, Snow White and the Seven Dwarfs themed number guessing game
 
 ## Authors
 Ashley Erffmeyer 
+
 With support from KU's Coding Boot Camp staff members:
 * Ryan LaRue (Instructor)
 * Jacqueline Kolze (TA)
@@ -17,9 +18,10 @@ With support from KU's Coding Boot Camp staff members:
 
 ## Prerequisites & Installation
 None
+
 Note: Added the following script lines in index.html to allow for bootstrap and jQuery functionality
 
-```javascript
+```html
  <!-- Added link to the jQuery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

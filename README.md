@@ -4,9 +4,7 @@ A jQuery powered, Snow White and the Seven Dwarfs themed number guessing game
 [Link to game!](https://erffmea.github.io/unit-4-game/) 
 
 ## Authors
-Ashley Erffmeyer 
-
-With support from KU's Coding Boot Camp staff members:
+Ashley Erffmeyer, with support from KU's Coding Boot Camp staff members:
 * Ryan LaRue (Instructor)
 * Jacqueline Kolze (TA)
 

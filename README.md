@@ -2,6 +2,8 @@
 
 ## General Game Overview
 
+###Instructions: 
+
 -You will be given a random number at the beginning of the game.
 
 -There are four dwarfs/gems below. 
@@ -13,5 +15,5 @@
 
 -Each time when the game starts, the game will change the values of each gem.
 
-Languages used in this game: JavaScript, jQuery, CSS, HTML
+Languages/Libraries used: JavaScript, jQuery, CSS, HTML
 

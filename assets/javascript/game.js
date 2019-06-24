@@ -4,14 +4,14 @@ $(document).ready(function () {
     //------------------------------------
 
     //Current and Target Scores
-    var targetNumber = 0;
+    var targetScore = 0;
     var score = 0;
 
     //Wins and Losses
     var wins = 0;
     var losses = 0;
 
-    //Gems - Objects wtih names and values
+    //Gems - Objects with names and values
     var gem = {
         gem1:
         {
@@ -36,66 +36,103 @@ $(document).ready(function () {
     };
 
 
-    var gem1 = Math.floor(Math.random() * 12) + 1;
-    var gem2 = Math.floor(Math.random() * 12) + 1;
-    var gem3 = Math.floor(Math.random() * 12) + 1;
-    var gem4 = Math.floor(Math.random() * 12) + 1;
-
-    var counter = 0;
-
     //FUNCTIONS
     //------------------------------------
 
-    function initializeGame() {
-
-        var targetNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-        var wins = "";
-        var losses = "";
-        var score = 0;
-
-        $("#targetNumber").text(targetNumber);
-        $("#wins").text(wins);
-        $("#losses").text(losses);
-        $("#score").text(score);
-
+    // Function to produce a random number between two values (a minimum value and a maximum value)
+    var getRandomNum = function (min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    initializeGame();
+
+    //Function to start/initialize game logic
+    var initializeGame = function () {
+
+        //Reset current score back to 0
+        score = 0;
+
+        //Set a new target score, a random number between 19 and 120
+        targetScore = getRandomNum(19, 120);
+
+        //Set new values for each gem, random numbers between 1 and 12
+        gem.gem1.value = getRandomNum(1, 12);
+        gem.gem2.value = getRandomNum(1, 12);
+        gem.gem3.value = getRandomNum(1, 12);
+        gem.gem4.value = getRandomNum(1, 12);
+
+        //Update HTML to show start/initial values
+        $("#score").html(score);
+        $("#targetScore").html(targetScore);
+    }
+
+    //Function to add values of gems together
+    var addvalues = function (gem) {
+
+        //Calculates current score
+        score = score + gem.value;
+
+        //Update HTML to show new current score value
+        $("#score").html(score);
+
+        //Call checkWin function to check if user won or lost
+        checkWin();
+    }
+
+    //Function to check if user won or lost and reset game
+    var checkWin = function () {
+        //Determine if user's score is greater than the target score
+        if (score > targetScore) {
+
+            //Tell the user they lost
+            alert("Sorry, you lost! Please try again!");
+
+            //Add the loss to the lost counter
+            losses++
+
+            //Update HTML to show new loss value
+            $("#losses").html(losses);
+
+            //Call initializeGame function to start game logic again
+            initializeGame();
+        }
+
+        //If the user's score is not greater than the target score, then check to see if the score is equal to the target score
+        else if (score == targetScore) {
+
+            //Tell the user they won!
+            alert("Congratulations! You've won!!");
+
+            //Add the win to the win counter
+            wins++
+
+            //Update HTML to show new wins value
+            $("#wins").html(wins);
+
+            //Call initializeGame function to start game logic again
+            initializeGame();
+        }
+    }
+
 
 
     //MAIN PROCESS
     //------------------------------------
-    $(".img-thumbnail").on("click", function () {
-
-        // Each imageCrystal will be given a data attribute called data-crystalValue.
-        // This data attribute will be set equal to the array value.
-        gem1.attr("data-gem1-value", gem1);
-
-        // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-        $(".img-thumbnail").append(gem1);
-
-        // Determining the crystal's value requires us to extract the value from the data attribute.
-        // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-        // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-        // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
-
-        var gemValue1 = ($(this).attr("data-gem1-value"));
-        gemValue1 = parseInt(gemValue1);
-        // We then add the crystalValue to the user's "counter" which is a global variable.
-        // Every click, from every crystal adds to the global counter.
-        score += gemValue1;
-        console.log(score);
-
-        // All of the same game win-lose logic applies. So the rest remains unchanged.
-        $("#score").text(score);
-
-        /**if (counter === targetNumber) {
-            alert("You win!");
-        }
-
-        else if (counter >= targetNumber) {
-            alert("You lose!!");
-        }*/
+    $("#gem1").on("click", function () {
+        addvalues(gem.gem1);
 
     });
+
+    $("#gem2").on("click", function () {
+        addvalues(gem.gem2);
+    });
+
+    $("#gem3").on("click", function () {
+        addvalues(gem.gem3);
+    });
+
+    $("#gem4").on("click", function () {
+        addvalues(gem.gem4);
+    });
+
+    initializeGame();
 
 });

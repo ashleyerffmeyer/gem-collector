@@ -11,7 +11,7 @@ $(document).ready(function () {
     var wins = 0;
     var losses = 0;
 
-    //Gems - Objects with names and values
+    //An object for all gems with properties ID'd for names and values
     var gem = {
         gem1:
         {
@@ -39,7 +39,7 @@ $(document).ready(function () {
     //FUNCTIONS
     //------------------------------------
 
-    // Function to produce a random number between two values (a minimum value and a maximum value)
+    // Function to pick a random number between two values (a minimum value and a maximum value)
     var getRandomNum = function (min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -77,8 +77,9 @@ $(document).ready(function () {
         checkWin();
     }
 
-    //Function to check if user won or lost and reset game
+    //Function to check if user won or lost, then reset the game
     var checkWin = function () {
+
         //Determine if user's score is greater than the target score
         if (score > targetScore) {
 
@@ -112,13 +113,13 @@ $(document).ready(function () {
         }
     }
 
-
     //------------------------------------
     //MAIN PROCESS
     //------------------------------------
+
+    //Click on any of the dwarfs/gems; on click calls addValues function to calculate score
     $("#gem1").on("click", function () {
         addvalues(gem.gem1);
-
     });
 
     $("#gem2").on("click", function () {
@@ -133,6 +134,7 @@ $(document).ready(function () {
         addvalues(gem.gem4);
     });
 
+    //Call initializeGame function to start game logic
     initializeGame();
 
 });

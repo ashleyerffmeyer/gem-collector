@@ -1,9 +1,40 @@
 $(document).ready(function () {
 
+    //GLOBAL VARIABLES
+    //------------------------------------
+
+    //Current and Target Scores
     var targetNumber = 0;
+    var score = 0;
+
+    //Wins and Losses
     var wins = 0;
     var losses = 0;
-    var score = 0;
+
+    //Gems - Objects wtih names and values
+    var gem = {
+        gem1:
+        {
+            name: "gem1",
+            value: 0
+        },
+        gem2:
+        {
+            name: "gem2",
+            value: 0
+        },
+        gem3:
+        {
+            name: "gem3",
+            value: 0
+        },
+        gem4:
+        {
+            name: "gem4",
+            value: 0
+        }
+    };
+
 
     var gem1 = Math.floor(Math.random() * 12) + 1;
     var gem2 = Math.floor(Math.random() * 12) + 1;
@@ -11,6 +42,9 @@ $(document).ready(function () {
     var gem4 = Math.floor(Math.random() * 12) + 1;
 
     var counter = 0;
+
+    //FUNCTIONS
+    //------------------------------------
 
     function initializeGame() {
 
@@ -27,6 +61,9 @@ $(document).ready(function () {
     }
     initializeGame();
 
+
+    //MAIN PROCESS
+    //------------------------------------
     $(".img-thumbnail").on("click", function () {
 
         // Each imageCrystal will be given a data attribute called data-crystalValue.

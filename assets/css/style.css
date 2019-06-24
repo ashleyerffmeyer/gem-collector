@@ -35,14 +35,14 @@ h2{
     color: #fff;
     background-color: darkorchid;
     font-size: 26px;
-    margin: 0 5px 10px 0;
+    margin: 0 10px 10px 0;
     font-family: 'Lato', sans-serif;
 }
 
 #wins-losses{
     color: #fff;
     background-color: darkcyan;
-    margin: 0 5px 10px 0px;
+    margin: 0 10px 10px 0px;
     font-size: 18px;
     font-family: 'Lato', sans-serif;
 }

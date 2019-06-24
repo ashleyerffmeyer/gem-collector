@@ -83,7 +83,7 @@ $(document).ready(function () {
         if (score > targetScore) {
 
             //Tell the user they lost
-            alert("Sorry, you lost! Please try again!");
+            alert("You lost - your score is great than the target score! Please try again!");
 
             //Add the loss to the lost counter
             losses++

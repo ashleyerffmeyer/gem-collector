@@ -52,6 +52,10 @@ Note: Added the following script lines in index.html to allow for bootstrap and 
 
 * The user wins the game by matching her total score to the random number; the user loses the game if her total score goes above the random number
 
+![Image of Win Screen] (assets/images/win.png)
+
+![Image of Loss Screen] (assets/images/loss.png)
+
 * The value of each dwarf/gem is hidden from the user until she clicks on the image
 
 * Each time when the game starts, the game will change the values of each dwarf/gem

@@ -52,9 +52,9 @@ Note: Added the following script lines in index.html to allow for bootstrap and 
 
 * The user wins the game by matching her total score to the random number; the user loses the game if her total score goes above the random number
 
-![Image of Win Screen] (https://github.com/erffmea/gem-collector/blob/master/assets/images/win.png)
+![Image of Win Screen](https://github.com/erffmea/gem-collector/blob/master/assets/images/win.png)
 
-![Image of Loss Screen] (https://github.com/erffmea/gem-collector/blob/master/assets/images/loss.png)
+![Image of Loss Screen](https://github.com/erffmea/gem-collector/blob/master/assets/images/loss.png)
 
 * The value of each dwarf/gem is hidden from the user until she clicks on the image
 

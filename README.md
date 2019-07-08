@@ -1,7 +1,7 @@
 # Heigh-Ho Heigh-Ho Gems Collector!
 A jQuery powered, Snow White and the Seven Dwarfs themed number guessing game
 
-[Link to game!](https://erffmea.github.io/unit-4-game/) 
+[Link to game!](https://erffmea.github.io/gem-collector/) 
 
 ## Authors
 Ashley Erffmeyer, with major support from KU's Coding Boot Camp staff members:
